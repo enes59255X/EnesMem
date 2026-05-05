@@ -14,4 +14,4 @@ from PyInstaller.utils.hooks.qt import add_qt6_dependencies
 hiddenimports, binaries, datas = add_qt6_dependencies(__file__)
 
 # These dependencies cannot seem to be inferred from linked libraries.
-hiddenimports += ['PyQt6.QtNetwork', 'PyQt6.QtQml']
+hiddenimports += ['PyQt5.QtNetwork', 'PyQt5.QtQml']

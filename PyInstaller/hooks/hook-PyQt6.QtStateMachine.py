@@ -14,4 +14,4 @@ from PyInstaller.utils.hooks.qt import add_qt6_dependencies
 hiddenimports, binaries, datas = add_qt6_dependencies(__file__)
 
 # This dependency cannot seem to be inferred from linked libraries (at least on Windows).
-hiddenimports += ['PyQt6.QtGui']
+hiddenimports += ['PyQt5.QtGui']

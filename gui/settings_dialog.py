@@ -1,9 +1,9 @@
-from PyQt6.QtWidgets import (
+from PyQt5.QtWidgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QLabel, 
     QComboBox, QPushButton, QFormLayout, QCheckBox,
     QSpinBox, QGroupBox, QFrame
 )
-from PyQt6.QtCore import Qt
+from PyQt5.QtCore import Qt
 from utils.settings import SettingsManager
 from utils.i18n import tr, i18n
 

@@ -6,7 +6,7 @@
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![PyQt6](https://img.shields.io/badge/PyQt6-6.6+-green.svg)](https://www.riverbankcomputing.com/software/pyqt/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.0.1-brightgreen.svg)](CHANGELOG.md)
 
 🇬🇧 [İngilizce için tıklayın](README_EN.md)
 
@@ -147,6 +147,43 @@ EnesMem/
 - **Toplu okumalar**: Tarayıcı belleği 4MB parçalar halinde okur, `memoryview` ile sıfır-kopya dilimleme yapar.
 - **QThread**: Tarama ana thread'den ayrı çalışır. İlerleme Qt sinyalleri ile raporlanır.
 - **Tek dondurma thread'i**: Tek daemon thread 50ms aralıklarla tüm dondurulmuş adresleri yazar.
+
+---
+
+## Hakkında
+
+**EnesMem v1.0.1** - Python ile geliştirilmiş, üretim düzeyinde bir bellek tarayıcısı ve düzenleyicisi.
+
+### 🎯 Misyon
+Cheat Engine'in özelliklerini Python ekosisteminde sunmak ve modern bir alternatif sağlamak.
+
+### 🌟 Öne Çıkan Özellikler
+- **Çok Dilli Destek**: Türkçe ve İngilizce arayüz
+- **Gelişmiş Çeviri Sistemi**: Anlık dil değiştirme ve otomatik yükleme
+- **Modern Arayüz**: PyQt5 ile geliştirilmiş, koyu/açık tema desteği
+- **Global Kısayollar**: Klavye kısayolları ile hızlı erişim
+- **Gerçek Zamanlı**: Bellek değerlerini anlık olarak izleme
+
+### 📊 Versiyon Bilgileri
+- **Versiyon**: v1.0.1
+- **Yayın Tarihi**: 2026
+- **Geliştirici**: Enes
+- **Lisans**: MIT
+- **Platform**: Windows 10/11 (64-bit)
+
+### 🚀 Teknoloji
+- **Python 3.11+**: Modern Python sürümü
+- **PyQt5**: Güçlü ve stabil GUI kütüphanesi
+- **ctypes**: Saf Windows API entegrasyonu
+- **Threading**: Çoklu işlem desteği
+
+### 📞 İletişim
+- **GitHub**: https://github.com/enes59255X/EnesMem
+- **Issues**: https://github.com/enes59255X/EnesMem/issues
+- **Discussions**: https://github.com/enes59255X/EnesMem/discussions
+
+### 🙏 Teşekkür
+Bu proje, açık kaynak topluluğuna katkıda bulunan tüm geliştiricilere teşekkür eder.
 - **64/32-bit uyumlu**: Hedef mimariyi `IsWow64Process` ile algılar. Pointer okumaları otomatik ayarlanır.
 
 ---

@@ -9,7 +9,8 @@ from PyQt5.QtWidgets import (
     QFileDialog, QApplication, QTabWidget,
 )
 from PyQt5.QtCore import pyqtSignal, Qt
-from PyQt5.QtGui import QFont, QKeyEvent, QKeySequence\nfrom PyQt5.QtWidgets import QShortcut\n
+from PyQt5.QtGui import QFont, QKeyEvent, QKeySequence
+from PyQt5.QtWidgets import QShortcut
 from utils.converters import format_address, format_value
 from utils.patterns import DataType
 from utils.i18n import tr

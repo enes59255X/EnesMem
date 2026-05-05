@@ -4,7 +4,7 @@ Handles language, refresh rates, and other user preferences.
 """
 import json
 import os
-from PyQt6.QtCore import QSettings
+from PyQt5.QtCore import QSettings
 
 class SettingsManager:
     _instance = None

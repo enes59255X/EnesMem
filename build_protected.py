@@ -156,7 +156,7 @@ a = Analysis(
         ('version.json', '.'),
     ],
     hiddenimports=[
-        'PyQt6.sip',
+        'PyQt5.sip',
         'pynput.keyboard._win32',
         'pynput.mouse._win32',
         'psutil',

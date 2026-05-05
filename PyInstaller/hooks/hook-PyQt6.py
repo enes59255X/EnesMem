@@ -17,7 +17,7 @@ ensure_single_qt_bindings_package("PyQt6")
 # Only proceed if PyQt6 can be imported.
 if pyqt6_library_info.version is not None:
     hiddenimports = [
-        'PyQt6.sip',
+        'PyQt5.sip',
         # Imported via __import__ in PyQt6/__init__.py
         'pkgutil',
     ]

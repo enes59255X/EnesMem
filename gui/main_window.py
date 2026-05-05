@@ -6,16 +6,17 @@ freeze/unfreeze, pointer resolution, and UI theming.
 import sys
 from typing import Optional
 
-from PyQt6.QtWidgets import (
+from PyQt5.QtWidgets import (
     QMainWindow, QWidget, QHBoxLayout, QVBoxLayout,
     QLabel, QStatusBar, QPushButton, QToolBar,
     QMessageBox, QInputDialog, QDockWidget, QSplitter,
     QApplication, QFileDialog,
 )
-from PyQt6.QtCore import (
+from PyQt5.QtCore import (
     Qt, QTimer, QThread, pyqtSignal, QObject, pyqtSlot,
 )
-from PyQt6.QtGui import QAction, QIcon, QFont, QKeySequence
+from PyQt5.QtGui import QIcon, QFont, QKeySequence
+from PyQt5.QtWidgets import QAction
 
 from core.process_manager import ProcessManager
 from core.memory_io import MemoryIO
@@ -312,15 +313,30 @@ class MainWindow(QMainWindow):
             self.activateWindow()
     
     def _open_hotkey_dialog(self) -> None:
-        """Open hotkey configuration dialog."""
-        # Stop hotkeys while configuring to avoid conflicts
-        was_running = hotkey_manager.is_running()
-        hotkey_manager.stop()
+        """Open global hotkey configuration dialog."""
+        from gui.hotkey_dialog import HotkeyDialog
+        dlg = HotkeyDialog(self)
+        if dlg.exec():
+            pass  # Settings are automatically saved
+
+    def _open_language_dialog(self) -> None:
+        """Open language selection dialog."""
+        from gui.language_dialog import LanguageDialog
+        dlg = LanguageDialog(self)
+        dlg.language_changed.connect(self._on_language_changed)
+        if dlg.exec():
+            pass
+
+    def _on_language_changed(self, lang_code: str, lang_name: str) -> None:
+        """Handle language change."""
+        from utils.i18n_enhanced import get_i18n_manager
+        i18n_manager = get_i18n_manager()
         
-        if show_hotkey_dialog(self):
-            # Dialog accepted, restart hotkeys
-            if was_running:
-                hotkey_manager.start()
+        if i18n_manager.switch_language(lang_code):
+            self.retranslate_ui()
+            self._status_lbl.setText(f"Dil değiştirildi: {lang_name}")
+            log.info("Language changed to %s (%s)", lang_code, lang_name)
+            hotkey_manager.start()
             self._status_lbl.setText("Kısayol ayarları güncellendi")
 
     # ── Stylesheet ────────────────────────────────────────────────────────────
@@ -597,11 +613,11 @@ class MainWindow(QMainWindow):
         self._file_menu.addSeparator()
         
         # CT (Cheat Engine) import/export
-        self._act_import_ct = QAction("🎯 CT İçe Aktar", self)
+        self._act_import_ct = QAction("📂 CT İçe Aktar", self)
         self._act_import_ct.triggered.connect(self._on_import_ct)
         self._file_menu.addAction(self._act_import_ct)
         
-        self._act_export_ct = QAction("🎯 CT Dışa Aktar", self)
+        self._act_export_ct = QAction("📤 CT Dışa Aktar", self)
         self._act_export_ct.triggered.connect(self._on_export_ct)
         self._file_menu.addAction(self._act_export_ct)
         
@@ -628,6 +644,13 @@ class MainWindow(QMainWindow):
         self._settings_menu.addAction(self._act_settings)
         self._settings_menu.addSeparator()
         
+        # Language configuration
+        self._act_language = QAction("🌍 Dil / Language", self)
+        self._act_language.setShortcut(QKeySequence("Ctrl+L"))
+        self._act_language.triggered.connect(self._open_language_dialog)
+        self._settings_menu.addAction(self._act_language)
+        self._settings_menu.addSeparator()
+        
         # Hotkey configuration
         self._act_hotkeys = QAction(tr("menu_hotkeys") if tr("menu_hotkeys") != "!menu_hotkeys!" else "⌨️ Global Kısayollar", self)
         self._act_hotkeys.setShortcut(QKeySequence("Ctrl+H"))
@@ -642,19 +665,19 @@ class MainWindow(QMainWindow):
         self._view_menu.addAction(self._act_ptr)
         
         # AOB Scanner
-        self._act_aob = QAction("🔥 " + tr("menu_aob"), self)
+        self._act_aob = QAction("� " + tr("menu_aob"), self)
         self._act_aob.setShortcut(QKeySequence("Ctrl+B"))
         self._act_aob.triggered.connect(self._show_aob_dialog)
         self._view_menu.addAction(self._act_aob)
         
         # Graph Viewer
-        self._act_graph = QAction("📊 " + tr("menu_graph"), self)
+        self._act_graph = QAction("� " + tr("menu_graph"), self)
         self._act_graph.setShortcut(QKeySequence("Ctrl+G"))
         self._act_graph.triggered.connect(self._show_graph_dialog)
         self._view_menu.addAction(self._act_graph)
         
         # Memory Map
-        self._act_memmap = QAction("🔬 " + tr("menu_memory_map"), self)
+        self._act_memmap = QAction("�️ " + tr("menu_memory_map"), self)
         self._act_memmap.setShortcut(QKeySequence("Ctrl+M"))
         self._act_memmap.triggered.connect(self._show_memory_map)
         self._view_menu.addAction(self._act_memmap)
@@ -695,14 +718,14 @@ class MainWindow(QMainWindow):
         tb.setMovable(False)
         self.addToolBar(tb)
 
-        self._attach_btn = QPushButton("  ⚙ " + tr("btn_attach"))
+        self._attach_btn = QPushButton("  🔗 " + tr("btn_attach"))
         self._attach_btn.setObjectName("primary_btn")
         self._attach_btn.setFixedHeight(32)
         self._attach_btn.clicked.connect(self._open_process_selector)
         tb.addWidget(self._attach_btn)
-
+        
         tb.addSeparator()
-
+        
         self._proc_lbl = QLabel("  " + tr("lbl_none"))
         self._proc_lbl.setObjectName("proc_lbl")
         tb.addWidget(self._proc_lbl)
@@ -1399,3 +1422,15 @@ class MainWindow(QMainWindow):
         
         self._detach()
         event.accept()
+
+
+def main() -> None:
+    """Main entry point for EnesMem application."""
+    import sys
+    from PyQt5.QtWidgets import QApplication
+    from utils.i18n import tr
+    
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec_())

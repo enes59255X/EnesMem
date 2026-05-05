@@ -65,7 +65,7 @@ def build_exe():
         "--add-data", f"data{os.pathsep}data",
         
         # Hidden imports
-        "--hidden-import", "PyQt6.sip",
+        "--hidden-import", "PyQt5.sip",
         "--hidden-import", "pynput.keyboard._win32",
         "--hidden-import", "pynput.mouse._win32",
         

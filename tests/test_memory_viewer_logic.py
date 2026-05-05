@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import MagicMock
-from PyQt6.QtWidgets import QApplication
+from PyQt5.QtWidgets import QApplication
 from gui.memory_viewer import MemoryViewer, BYTES_PER_ROW, ROWS_VISIBLE
 
 @pytest.fixture(scope="session")
