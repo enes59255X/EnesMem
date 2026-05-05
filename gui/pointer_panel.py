@@ -1,16 +1,15 @@
 """
 pointer_panel.py — Pointer chain resolution panel (dockable window).
 """
-from PyQt6.QtWidgets import (
+from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QGroupBox,
     QLabel, QLineEdit, QPushButton, QTableWidget,
     QTableWidgetItem, QHeaderView, QComboBox,
     QAbstractItemView, QFormLayout, QMessageBox, QMenu,
     QFileDialog, QApplication, QTabWidget,
 )
-from PyQt6.QtCore import pyqtSignal, Qt
-from PyQt6.QtGui import QFont, QKeyEvent, QKeySequence, QShortcut
-
+from PyQt5.QtCore import pyqtSignal, Qt
+from PyQt5.QtGui import QFont, QKeyEvent, QKeySequence\nfrom PyQt5.QtWidgets import QShortcut\n
 from utils.converters import format_address, format_value
 from utils.patterns import DataType
 from utils.i18n import tr

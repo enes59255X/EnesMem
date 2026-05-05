@@ -2,13 +2,14 @@
 scan_panel.py — Left-side scan control panel.
 Emits signals to main_window for scan actions.
 """
-from PyQt6.QtWidgets import (
+from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel,
     QComboBox, QLineEdit, QPushButton, QProgressBar,
     QGroupBox, QFormLayout, QSizePolicy, QDoubleSpinBox
 )
-from PyQt6.QtCore import pyqtSignal, Qt
-from PyQt6.QtGui import QFont, QShortcut, QKeySequence
+from PyQt5.QtCore import pyqtSignal, Qt
+from PyQt5.QtGui import QFont, QKeySequence
+from PyQt5.QtWidgets import QShortcut
 
 from utils.patterns import DataType, ScanMode, VALUE_INPUT_MODES, FLOAT_TYPES
 from utils.i18n import tr
@@ -146,7 +147,7 @@ class ScanPanel(QWidget):
 
     def _check_attached(self) -> bool:
         if not self._is_attached:
-            from PyQt6.QtWidgets import QMessageBox
+            from PyQt5.QtWidgets import QMessageBox
             QMessageBox.warning(self, tr("settings_title") if tr("settings_title") != "!settings_title!" else "Warning", 
                                 tr("msg_no_scan") if tr("msg_no_scan") != "!msg_no_scan!" else "Lütfen önce bir işleme (process) bağlanın!")
             return False
