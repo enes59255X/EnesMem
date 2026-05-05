@@ -6,8 +6,7 @@
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![PyQt6](https://img.shields.io/badge/PyQt6-6.6+-green.svg)](https://www.riverbankcomputing.com/software/pyqt/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](https://github.com/enes59255X/EnesMem/releases)
-[![Release](https://img.shields.io/github/release/enes59255X/EnesMem.svg)](https://github.com/enes59255X/EnesMem/releases)
+[![Latest Release](https://img.shields.io/github/release/enes59255X/EnesMem.svg)](https://github.com/enes59255X/EnesMem/releases)
 [![Downloads](https://img.shields.io/github/downloads/enes59255X/EnesMem/total.svg)](https://github.com/enes59255X/EnesMem/releases)
 
 🇬🇧 [English Version](README_EN.md)
@@ -101,20 +100,19 @@
 
 ### Adım 1: İndirme
 1. [GitHub Releases](https://github.com/enes59255X/EnesMem/releases) sayfasına gidin
-2. `EnesMem-v1.0.1.zip` dosyasını indirin
+2. En son sürümü indirin
 
 ### Adım 2: Kurulum
 1. ZIP dosyasını herhangi bir klasöre çıkarın
 2. `EnesMem.exe` dosyasına sağ tıklayın
 3. **"Yönetici olarak çalıştır"** seçeneğini seçin
 
-### Adım 3: Kullanım
 ### 🎮 Adım 3: Kullanım
 1. Hedef oyunu başlatın
 2. EnesMem'i açın ve oyun sürecini seçin
 3. Memory tarama başlatın!
 
- Önemli: Memory manipülasyonu için her zaman Yönetici olarak çalıştırın!
+> ⚠️ **Önemli:** Memory manipülasyonu için her zaman **Yönetici** olarak çalıştırın!
 
 ---
 
