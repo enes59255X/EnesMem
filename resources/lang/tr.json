@@ -66,7 +66,7 @@
     "msg_browsing": "0x{0} adresinde bellek görüntüleniyor",
     "lbl_regions": "Bölgeler: {0}",
     "about_title": "EnesMem Hakkında",
-    "about_text": "<h3>EnesMem</h3><p>Cheat Engine'den esinlenen<br>Python tabanlı bir bellek tarayıcısı/düzenleyicisi.</p><p><b>Teknoloji:</b> Python 3.11+ · ctypes · PyQt6</p><p><b>Yazar:</b> EnesMem Engine v1.0 ile geliştirildi</p>",
+    "about_text": "<h3>EnesMem</h3><p>Cheat Engine'den esinlenen<br>Python tabanlı bir bellek tarayıcısı/düzenleyicisi.</p><p><b>Teknoloji:</b> Python 3.11+ · ctypes · PyQt5</p><p><b>Yazar:</b> EnesMem Engine v1.0.1 ile geliştirildi</p>",
     "menu_add_watchlist": "İzleme Listesine Ekle",
     "menu_edit_value": "Değeri Düzenle",
     "menu_browse_memory": "Belleği Görüntüle",

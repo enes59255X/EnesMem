@@ -62,7 +62,7 @@
     "msg_browsing": "Browsing memory at 0x{0}",
     "lbl_regions": "Regions: {0}",
     "about_title": "About EnesMem",
-    "about_text": "<h3>EnesMem</h3><p>A Python-based memory scanner/editor<br>inspired by Cheat Engine.</p><p><b>Stack:</b> Python 3.11+ · ctypes · PyQt6</p><p><b>Author:</b> Built with EnesMem Engine v1.0</p>",
+    "about_text": "<h3>EnesMem</h3><p>A Python-based memory scanner/editor<br>inspired by Cheat Engine.</p><p><b>Stack:</b> Python 3.11+ · ctypes · PyQt5</p><p><b>Author:</b> Built with EnesMem Engine v1.0.1</p>",
     "menu_add_watchlist": "Add to Watchlist",
     "menu_edit_value": "Edit Value",
     "menu_browse_memory": "Browse Memory",
