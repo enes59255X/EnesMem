@@ -40,8 +40,7 @@
 ## Gereksinimler
 
 - Windows 10/11 (64-bit)
-- Python 3.11+
-- Yönetici yetkileri (`ReadProcessMemory` için gerekli)
+- Yönetici yetkileri
 
 ---
 
@@ -67,6 +66,7 @@
 
 ### 📊 Bilgiler
 - **Versiyon**: v1.0.0
+- **Yayın Tarihi**: 2026
 - **Lisans**: MIT
 - **Platform**: Windows 10/11 (64-bit)
 

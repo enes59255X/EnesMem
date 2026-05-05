@@ -40,8 +40,7 @@
 ## Requirements
 
 - Windows 10/11 (64-bit)
-- Python 3.11+
-- Administrator privileges (required for `ReadProcessMemory`)
+- Administrator privileges
 
 ---
 
