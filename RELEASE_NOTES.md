@@ -1,4 +1,4 @@
-# EnesMem v1.0.0 - Release Notes
+# EnesMem v1.0.0 - Sürüm Notları
 
 ## 🚀 Quick Start
 
