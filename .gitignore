@@ -58,3 +58,24 @@ data/*.ct
 *.tmp
 *.temp
 scratch/
+
+# Build scripts and artifacts
+build*.py
+build*.bat
+build*.log
+EnesMem.exe
+EnesMem-v*.zip
+version.json
+
+# Package dependencies (should be in requirements.txt)
+setuptools/
+packaging/
+pefile/
+pyinstaller/
+pyinstaller_hooks_contrib/
+win32ctypes/
+altgraph/
+ordlookup/
+peutils/
+distutils-precedence.pth
+*.dist-info/
