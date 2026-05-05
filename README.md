@@ -6,39 +6,34 @@
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![PyQt6](https://img.shields.io/badge/PyQt6-6.6+-green.svg)](https://www.riverbankcomputing.com/software/pyqt/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.1-brightgreen.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](CHANGELOG.md)
 
 🇬🇧 [İngilizce için tıklayın](README_EN.md)
 
 ---
 
+## İndir
+
+[📥 EnesMem v1.0.0 İndir (Releases)](https://github.com/enes59255X/EnesMem/releases)
+
+---
+
 ## Özellikler
 
-| Özellik | Durum | Aşama |
-|---------|-------|-------|
-| İşlem listeleme ve bağlanma | ✅ | Temel |
-| Çoklu tür bellek okuma/yazma (Int8/16/32/64, Float, Double, String, Bytes) | ✅ | Temel |
-| İlk Tarama (tüm bellek bölgeleri) | ✅ | Temel |
-| Sonraki Tarama (sonuçları daraltma) | ✅ | Temel |
-| Tarama modları: Exact, Bigger, Smaller, Increased, Decreased, Changed, Unchanged, Unknown | ✅ | Temel |
-| Değer dondurma (arka plan thread'i) | ✅ | Temel |
-| Canlı yenilemeli izleme listesi | ✅ | Temel |
-| Pointer zinciri çözümleme | ✅ | Temel |
-| Koyu tema PyQt6 arayüzü | ✅ | Temel |
-| UAC yetki yükseltme | ✅ | Temel |
-| **Aşama 1 - Gelişmiş Özellikler** | | |
-| Global Kısayol Sistemi | ✅ | Aşama 1 |
-| İzleme Listesi Grupları ve Klasörleri | ✅ | Aşama 1 |
-| AOB Gelişmiş Tarama | ✅ | Aşama 1 |
-| **Aşama 2 - Profesyonel Araçlar** | | |
-| Değer Grafik Sistemi | ✅ | Aşama 2 |
-| CT Dosya İçe/Dışa Aktarma | ✅ | Aşama 2 |
-| Lua Betik Çerçevesi | ✅ | Aşama 2 |
-| Karşılaştırma/Fark Tarama | ✅ | Aşama 2 |
-| **Aşama 3 - Uzman Özellikleri** | | |
-| Bellek Haritası Görüntüleyici | ✅ | Aşama 3 |
-| Gelişmiş Tarama Filtreleri | ✅ | Aşama 3 |
-| Kod Enjeksiyon Çerçevesi | ✅ | Aşama 3 |
+- ✅ İşlem listeleme ve bağlanma
+- ✅ Çoklu tür bellek okuma/yazma (Int8/16/32/64, Float, Double, String, Bytes)
+- ✅ İlk Tarama ve Sonraki Tarama
+- ✅ Tarama modları: Exact, Bigger, Smaller, Increased, Decreased, Changed, Unchanged, Unknown
+- ✅ Değer dondurma (arka plan thread'i)
+- ✅ Canlı yenilemeli izleme listesi
+- ✅ Pointer zinciri çözümleme
+- ✅ Koyu/açık tema desteği
+- ✅ Global Kısayol Sistemi
+- ✅ AOB Gelişmiş Tarama
+- ✅ Değer Grafik Sistemi
+- ✅ CT Dosya İçe/Dışa Aktarma
+- ✅ Lua Betik Çerçevesi
+- ✅ Bellek Haritası Görüntüleyici
 
 ---
 
@@ -50,54 +45,33 @@
 
 ---
 
-## Hızlı Başlangıç
+## Kurulum ve Kullanım
 
-```bash
-# 1. Bağımlılıkları yükle
-pip install -r requirements.txt
+1. **Releases** bölümünden `EnesMem.exe` dosyasını indir
+2. Yönetici olarak çalıştır (sağ tık → Yönetici olarak çalıştır)
+3. İşlem seç → Tarama yap → Değerleri değiştir
 
-# 2. Yönetici olarak çalıştır
-python main.py
-```
-
-> **Önemli:** Her zaman Yönetici olarak çalıştırın. Aksi halde sadece mevcut
-> kullanıcı hesabınıza ait işlemleri tarayabilirsiniz.
+> **Önemli:** Her zaman Yönetici olarak çalıştırın. Aksi halde sadece mevcut kullanıcı hesabınıza ait işlemleri tarayabilirsiniz.
 
 ---
 
 ## Hakkında
 
-**EnesMem v1.0.1** - Python ile geliştirilmiş, üretim düzeyinde bir bellek tarayıcısı ve düzenleyicisi.
+**EnesMem v1.0.0** - Python ile geliştirilmiş, üretim düzeyinde bir bellek tarayıcısı ve düzenleyicisi.
 
-### 🎯 Misyon
-Cheat Engine'in özelliklerini Python ekosisteminde sunmak ve modern bir alternatif sağlamak.
-
-### 🌟 Öne Çıkan Özellikler
+### 🌟 Özellikler
 - **Çok Dilli Destek**: Türkçe ve İngilizce arayüz
-- **Gelişmiş Çeviri Sistemi**: Anlık dil değiştirme ve otomatik yükleme
-- **Modern Arayüz**: PyQt5 ile geliştirilmiş, koyu/açık tema desteği
+- **Modern Arayüz**: Koyu/açık tema desteği
 - **Global Kısayollar**: Klavye kısayolları ile hızlı erişim
 - **Gerçek Zamanlı**: Bellek değerlerini anlık olarak izleme
 
-### 📊 Versiyon Bilgileri
-- **Versiyon**: v1.0.1
-- **Yayın Tarihi**: 2026
+### 📊 Bilgiler
+- **Versiyon**: v1.0.0
 - **Lisans**: MIT
 - **Platform**: Windows 10/11 (64-bit)
 
-### 🚀 Teknoloji
-- **Python 3.11+**: Modern Python sürümü
-- **PyQt5**: Güçlü ve stabil GUI kütüphanesi
-- **ctypes**: Saf Windows API entegrasyonu
-- **Threading**: Çoklu işlem desteği
-
-### 📞 İletişim
-- **GitHub**: https://github.com/enes59255X/EnesMem
-- **Issues**: https://github.com/enes59255X/EnesMem/issues
-- **Discussions**: https://github.com/enes59255X/EnesMem/discussions
-
-### 🙏 Teşekkür
-Bu proje, açık kaynak topluluğuna katkıda bulunan tüm geliştiricilere teşekkür eder.
+### � Destek
+GitHub: https://github.com/enes59255X/EnesMem
 
 ---
 
