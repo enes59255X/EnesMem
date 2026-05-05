@@ -1,14 +1,14 @@
 # EnesMem v1.0.0 - Sürüm Notları
 
-## 🚀 Quick Start
+## 🚀 Hızlı Başlangıç
 
-**Users:**
-1. Download `EnesMem-v1.0.0.zip` from GitHub Releases
-2. Extract ZIP to any folder
-3. Double-click `EnesMem.exe` (Run as Administrator)
-4. Done! No installation needed.
+**Kullanıcılar:**
+1. GitHub Releases'dan `EnesMem-v1.0.0.zip` indirin
+2. ZIP'i herhangi bir klasöre çıkarın
+3. `EnesMem.exe` dosyasına çift tıklayın (Yönetici olarak çalıştırın)
+4. Tamamlandı! Kurulum gerekmez.
 
-**Developers:**
+**Geliştiriciler:**
 ```bash
 git clone https://github.com/enes59255X/EnesMem.git
 cd EnesMem
@@ -16,104 +16,104 @@ pip install -r requirements.txt
 python main.py
 ```
 
-## 📋 Features
+## 📋 Özellikler
 
-### Core Features
-- ✅ Memory scanning (First/Next scan)
-- ✅ Multiple data types (Int8/16/32/64, Float, Double, String, Bytes)
-- ✅ Scan modes (Exact, Bigger, Smaller, Increased, Decreased, Changed, Unchanged, Unknown)
-- ✅ Value freezing with background thread
-- ✅ Memory viewer with hex display
-- ✅ Pointer chain resolution (manual and automatic)
-- ✅ Watchlist management
+### Temel Özellikler
+- ✅ Bellek tarama (İlk/Sonraki tarama)
+- ✅ Çoklu veri türleri (Int8/16/32/64, Float, Double, String, Bytes)
+- ✅ Tarama modları (Tam, Büyük, Küçük, Artan, Azalan, Değişen, Değişmeyen, Bilinmeyen)
+- ✅ Değer dondurma (arka plan thread'i)
+- ✅ Hex görüntüleyicili bellek görüntüleyici
+- ✅ Pointer zinciri çözümleme (manuel ve otomatik)
+- ✅ İzleme listesi yönetimi
 
-### Phase 1 - Advanced Features
-- ✅ Global hotkey system
-- ✅ Watchlist groups and folders
-- ✅ AOB (Array of Bytes) scanning
-- ✅ Modern PyQt6 dark UI
+### Aşama 1 - Gelişmiş Özellikler
+- ✅ Global kısayol sistemi
+- ✅ İzleme listesi grupları ve klasörleri
+- ✅ AOB (Byte Dizisi) tarama
+- ✅ Modern PyQt6 koyu arayüz
 
-### Phase 2 - Professional Tools
-- ✅ Value graph system with CSV export
-- ✅ Cheat Engine CT file import/export
-- ✅ Lua scripting engine with templates
-- ✅ Compare/Diff scanning between snapshots
+### Aşama 2 - Profesyonel Araçlar
+- ✅ CSV dışa aktarımlı değer grafik sistemi
+- ✅ Cheat Engine CT dosya içe/dışa aktarma
+- ✅ Şablonlu Lua betik motoru
+- ✅ Anlık görüntüler arası karşılaştırma/fark tarama
 
-### Phase 3 - Expert Features
-- ✅ Memory map viewer with filtering
-- ✅ Advanced scan filters (alignment, range, module, protection)
-- ✅ Code injection framework
+### Aşama 3 - Uzman Özellikleri
+- ✅ Filtrelemeli bellek haritası görüntüleyici
+- ✅ Gelişmiş tarama filtreleri (hizalama, aralık, modül, koruma)
+- ✅ Kod enjeksiyon çerçevesi
 
-### Internationalization
-- ✅ Turkish language support
-- ✅ English language support
-- ✅ Easy language switching
+### Uluslararasılaştırma
+- ✅ Türkçe dil desteği
+- ✅ İngilizce dil desteği
+- ✅ Kolay dil değiştirme
 
-## 🛡️ Technical Details
+## 🛡️ Teknik Detaylar
 
-- **Framework:** PyQt6 (modern, native widgets)
-- **Memory Access:** Pure ctypes (no pymem dependency)
-- **Performance:** 4MB bulk reads with memoryview optimization
-- **Threading:** Non-blocking UI with QThread
-- **Architecture:** 64/32-bit compatible with automatic detection
-- **Security:** UAC elevation for admin privileges
+- **Çerçeve:** PyQt6 (modern, yerel widget'lar)
+- **Bellek Erişimi:** Saf ctypes (pymem bağımlılığı yok)
+- **Performans:** Memoryview optimizasyonlu 4MB toplu okumalar
+- **Threading:** QThread ile engellemesiz arayüz
+- **Mimari:** Otomatik algılamalı 64/32-bit uyumlu
+- **Güvenlik:** Yönetici yetkileri için UAC yükseltme
 
-## 🔧 Requirements
+## 🔧 Gereksinimler
 
-- **OS:** Windows 10/11 (64-bit)
-- **Python:** 3.11+ (for development)
-- **Privileges:** Administrator (required for memory access)
+- **İS:** Windows 10/11 (64-bit)
+- **Python:** 3.11+ (geliştirme için)
+- **Yetkiler:** Yönetici (bellek erişimi için gerekli)
 
-## 📁 File Structure
+## 📁 Dosya Yapısı
 
 ```
 EnesMem/
-├── main.py                 # Entry point with UAC
-├── requirements.txt          # Runtime dependencies
-├── README.md               # Turkish documentation
-├── README_EN.md            # English documentation
-├── TUTORIAL.md             # Usage guide (TR/EN)
-├── LICENSE                 # MIT license
-├── .gitignore              # Git rules
+├── main.py                 # UAC ile giriş noktası
+├── requirements.txt          # Çalışma zamanı bağımlılıkları
+├── README.md               # Türkçe dokümantasyon
+├── README_EN.md            # İngilizce dokümantasyon
+├── TUTORIAL.md             # Kullanım kılavuzu (TR/EN)
+├── LICENSE                 # MIT lisansı
+├── .gitignore              # Git kuralları
 │
-├── core/                  # Core engine (13 modules)
-├── gui/                   # User interface (12 modules)
-├── utils/                  # Utilities (6 modules)
-├── resources/lang/         # Languages (2 files)
-└── data/                   # User data (gitignored)
+├── core/                  # Temel motor (13 modül)
+├── gui/                   # Kullanıcı arayüzü (12 modül)
+├── utils/                  # Yardımcılar (6 modül)
+├── resources/lang/         # Diller (2 dosya)
+└── data/                   # Kullanıcı verisi (gitignored)
 ```
 
-## ⚠️ Important Notes
+## ⚠️ Önemli Notlar
 
-### For Users
-- **Always run as Administrator** - Required for memory access
-- **Antivirus warnings** - May trigger alerts (false positives)
-- **Single file** - No installation needed, portable
+### Kullanıcılar İçin
+- **Her zaman Yönetici olarak çalıştırın** - Bellek erişimi için gerekli
+- **Antivirüs uyarıları** - Yanlış pozitif uyarılar verebilir
+- **Tek dosya** - Kurulum gerekmez, taşınabilir
 
-### For Developers
-- **Clean repository** - Only source code, no build artifacts
-- **No dependencies** - All packages in requirements.txt
-- **Pure Python** - No compiled binaries, just source
+### Geliştiriciler İçin
+- **Temiz repository** - Sadece kaynak kodu, yapı artefaktı yok
+- **Bağımlılık yok** - Tüm paketler requirements.txt'te
+- **Saf Python** - Derlenmiş ikili dosya yok, sadece kaynak
 
-## 🎯 What's Next?
+## 🎯 Sırada Ne Var?
 
-### v1.0.1 (Planned)
-- [ ] UPX compression for smaller EXE
-- [ ] Memory scan performance improvements
-- [ ] Additional scan filters
+### v1.0.1 (Planlanan)
+- [ ] Daha küçük EXE için UPX sıkıştırma
+- [ ] Bellek tarama performans iyileştirmeleri
+- [ ] Ek tarama filtreleri
 
-### v1.1.0 (Future)
-- [ ] Plugin system
-- [ ] Network scanning capabilities
-- [ ] Advanced code injection features
+### v1.1.0 (Gelecek)
+- [ ] Eklenti sistemi
+- [ ] Ağ tarama yetenekleri
+- [ ] Gelişmiş kod enjeksiyon özellikleri
 
-## 📞 Support
+## 📞 Destek
 
-- **Issues:** https://github.com/enes59255X/EnesMem/issues
-- **Documentation:** See TUTORIAL.md
-- **Community:** Contributions welcome via Pull Requests
+- **Sorunlar:** https://github.com/enes59255X/EnesMem/issues
+- **Dokümantasyon:** TUTORIAL.md dosyasına bakın
+- **Topluluk:** Pull Request'lerle katkıda bulunabilirsiniz
 
 ---
 
-**EnesMem v1.0.0** - Professional memory scanner for Windows
-*Built with ❤️ by EnesMem*
+**EnesMem v1.0.0** - Windows için profesyonel bellek tarayıcı
+*EnesMem tarafından ❤️ ile geliştirildi*
