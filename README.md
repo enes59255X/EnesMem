@@ -97,17 +97,18 @@
 
 ---
 
-## 🚀 Hızlı Kurulum
+## Hızlı Kurulum
 
-### 📦 Adım 1: İndirme
+### Adım 1: İndirme
 1. [GitHub Releases](https://github.com/enes59255X/EnesMem/releases) sayfasına gidin
-2. `EnesMem-v1.0.0.zip` dosyasını indirin
+2. `EnesMem-v1.0.1.zip` dosyasını indirin
 
-### ⚙️ Adım 2: Kurulum
+### Adım 2: Kurulum
 1. ZIP dosyasını herhangi bir klasöre çıkarın
 2. `EnesMem.exe` dosyasına sağ tıklayın
 3. **"Yönetici olarak çalıştır"** seçeneğini seçin
 
+### Adım 3: Kullanım
 ### 🎮 Adım 3: Kullanım
 1. Hedef oyunu başlatın
 2. EnesMem'i açın ve oyun sürecini seçin
