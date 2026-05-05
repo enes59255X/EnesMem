@@ -4,13 +4,13 @@ Replaces/extends the flat watchlist table in results_table.py.
 """
 from typing import Optional, List, Callable
 
-from PyQt5.QtWidgets import (
+from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QTreeWidget, QTreeWidgetItem,
     QPushButton, QLineEdit, QCheckBox, QLabel, QHeaderView, QMenu,
     QComboBox, QInputDialog, QMessageBox, QColorDialog, QAbstractItemView
 )
-from PyQt5.QtCore import Qt, pyqtSignal, QPoint
-from PyQt5.QtGui import QColor, QBrush, QFont
+from PyQt6.QtCore import Qt, pyqtSignal, QPoint
+from PyQt6.QtGui import QColor, QBrush, QFont
 
 from utils.patterns import DataType
 from utils.converters import format_address, format_value
@@ -392,7 +392,7 @@ class WatchlistTree(QWidget):
     
     def _edit_entry_value(self, entry) -> None:
         """Edit an entry's value."""
-        from PyQt5.QtWidgets import QInputDialog
+        from PyQt6.QtWidgets import QInputDialog
         current = format_value(entry.current_value, entry.dtype) if entry.current_value else "0"
         
         new_val, ok = QInputDialog.getText(

@@ -2,9 +2,9 @@
 memory_viewer.py — High-performance, virtualized memory hex editor.
 Uses QAbstractScrollArea to handle raw memory inspection.
 """
-from PyQt5.QtWidgets import QAbstractScrollArea, QWidget, QMenu
-from PyQt5.QtCore import Qt, QRect, QSize, pyqtSignal, QTimer
-from PyQt5.QtGui import QPainter, QFont, QColor, QPalette, QKeyEvent, QMouseEvent
+from PyQt6.QtWidgets import QAbstractScrollArea, QWidget, QMenu
+from PyQt6.QtCore import Qt, QRect, QSize, pyqtSignal, QTimer
+from PyQt6.QtGui import QPainter, QFont, QColor, QPalette, QKeyEvent, QMouseEvent
 
 from utils.converters import format_address
 from utils.logger import log
@@ -187,7 +187,7 @@ class MemoryViewer(QAbstractScrollArea):
         
         chosen = menu.exec(self.viewport().mapToGlobal(pos))
         if chosen == act_goto:
-            from PyQt5.QtWidgets import QInputDialog
+            from PyQt6.QtWidgets import QInputDialog
             addr_str, ok = QInputDialog.getText(self, "Go to Address", "Address (hex):")
             if ok and addr_str.strip():
                 try:
@@ -196,5 +196,5 @@ class MemoryViewer(QAbstractScrollArea):
                 except ValueError:
                     pass
         elif chosen == act_copy:
-            from PyQt5.QtWidgets import QApplication
+            from PyQt6.QtWidgets import QApplication
             QApplication.clipboard().setText(format_address(self._current_address))

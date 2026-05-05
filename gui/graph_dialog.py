@@ -3,13 +3,13 @@ graph_dialog.py — Value history graph visualization dialog.
 """
 from typing import Optional, List
 
-from PyQt5.QtWidgets import (
+from PyQt6.QtWidgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QWidget,
     QLabel, QPushButton, QComboBox, QTableWidget, QTableWidgetItem,
     QHeaderView, QFileDialog, QMessageBox, QSplitter, QCheckBox, QSizePolicy
 )
-from PyQt5.QtCore import Qt, QTimer, QPoint
-from PyQt5.QtGui import QPainter, QColor, QPen, QFont, QPaintEvent
+from PyQt6.QtCore import Qt, QTimer, QPoint
+from PyQt6.QtGui import QPainter, QColor, QPen, QFont, QPaintEvent
 
 from core.value_graph import graph_manager, ValueHistory
 from utils.i18n import tr
@@ -325,7 +325,7 @@ class GraphDialog(QDialog):
         if not address:
             return
         
-        from PyQt5.QtWidgets import QMessageBox
+        from PyQt6.QtWidgets import QMessageBox
         reply = QMessageBox.question(
             self,
             tr("dlg_confirm") if tr("dlg_confirm") != "!dlg_confirm!" else "Onay",

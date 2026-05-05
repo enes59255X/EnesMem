@@ -9,7 +9,7 @@ import json
 import os
 
 from pynput import keyboard
-from PyQt5.QtCore import QObject, pyqtSignal, QThread
+from PyQt6.QtCore import QObject, pyqtSignal, QThread
 from utils.logger import log
 from utils.settings import settings
 

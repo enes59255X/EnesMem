@@ -3,15 +3,15 @@ aob_dialog.py — AOB Pattern Generator and Scanner dialog.
 """
 from typing import Optional, List
 
-from PyQt5.QtWidgets import (
+from PyQt6.QtWidgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QTabWidget, QWidget,
     QLabel, QLineEdit, QPushButton, QComboBox, QTextEdit,
     QTableWidget, QTableWidgetItem, QHeaderView, QMessageBox,
     QSpinBox, QDoubleSpinBox, QCheckBox, QGroupBox, QFormLayout,
     QProgressBar, QFileDialog, QSplitter, QAbstractItemView
 )
-from PyQt5.QtCore import Qt, QThread, pyqtSignal, QTimer
-from PyQt5.QtGui import QFont, QColor, QBrush
+from PyQt6.QtCore import Qt, QThread, pyqtSignal, QTimer
+from PyQt6.QtGui import QFont, QColor, QBrush
 
 from core.aob_scanner import (
     parse_aob_pattern, generate_pattern_from_address, 

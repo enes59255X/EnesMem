@@ -4,14 +4,14 @@ Displays process memory layout with filtering and details.
 """
 from typing import Optional
 
-from PyQt5.QtWidgets import (
+from PyQt6.QtWidgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QWidget,
     QLabel, QPushButton, QTableWidget, QTableWidgetItem,
     QHeaderView, QFileDialog, QMessageBox, QSplitter,
     QCheckBox, QComboBox, QSpinBox, QGroupBox, QTextEdit
 )
-from PyQt5.QtCore import Qt, QTimer, pyqtSignal
-from PyQt5.QtGui import QColor, QBrush
+from PyQt6.QtCore import Qt, QTimer, pyqtSignal
+from PyQt6.QtGui import QColor, QBrush
 
 from core.memory_map import MemoryMap, MemoryRegion, MemoryState
 from utils.i18n import tr

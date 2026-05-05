@@ -36,7 +36,12 @@ ENV/
 
 # Logs
 *.log
-enes_mem.log
+EnesMem-v*.zip
+!EnesMem-v1.0.1-Stable.zip
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
 
 # Test artifacts
 .pytest_cache/
@@ -58,25 +63,3 @@ data/*.ct
 *.tmp
 *.temp
 scratch/
-
-# Build scripts and artifacts
-build*.py
-build*.bat
-build*.log
-EnesMem.exe
-EnesMem-v*.zip
-!EnesMem-v1.0.1-Ultimate.zip
-version.json
-
-# Package dependencies (should be in requirements.txt)
-setuptools/
-packaging/
-pefile/
-pyinstaller/
-pyinstaller_hooks_contrib/
-win32ctypes/
-altgraph/
-ordlookup/
-peutils/
-distutils-precedence.pth
-*.dist-info/
