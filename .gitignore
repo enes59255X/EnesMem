@@ -37,7 +37,7 @@ ENV/
 # Logs
 *.log
 EnesMem-v*.zip
-!EnesMem-v1.0.1-Stable.zip
+!EnesMem-v1.0.0.zip
 .pytest_cache/
 .coverage
 htmlcov/
