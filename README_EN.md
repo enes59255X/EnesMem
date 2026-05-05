@@ -6,7 +6,7 @@
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![PyQt6](https://img.shields.io/badge/PyQt6-6.6+-green.svg)](https://www.riverbankcomputing.com/software/pyqt/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.0.1-brightgreen.svg)](CHANGELOG.md)
 
 🇹🇷 [Türkçe için buraya tıklayın](README.md)
 
@@ -65,92 +65,6 @@ python main.py
 
 ---
 
-## Running Tests
-
-```bash
-# Requires Administrator — open an elevated terminal first
-python -m pytest tests/ -v
-```
-
----
-
-## Project Structure
-
-```
-EnesMem/
-├── main.py                    # Entry point (UAC elevation)
-├── requirements.txt           # Dependencies
-├── TUTORIAL.md                # Detailed user guide (TR/EN)
-├── walkthrough.md             # Feature walkthrough
-├── README.md                  # Turkish README
-│
-├── core/                      # Core engine modules
-│   ├── process_manager.py     # Process enumeration, handle lifecycle
-│   ├── memory_io.py           # Read/write + region enumeration
-│   ├── scanner.py             # First/Next scan engine
-│   ├── freezer.py             # Background freeze thread
-│   ├── pointer_scanner.py     # Pointer chain resolution
-│   ├── aob_scanner.py         # AOB/Pattern scanning
-│   ├── hotkey_manager.py      # Global hotkey system
-│   ├── value_graph.py         # Value history tracking
-│   ├── ct_manager.py          # Cheat Engine CT file support
-│   ├── lua_engine.py          # Lua scripting framework
-│   ├── compare_scanner.py     # Compare/Diff scanning
-│   ├── memory_map.py          # Memory region mapping
-│   ├── code_injector.py       # Code injection framework
-│   └── advanced_filters.py    # Advanced scanning filters
-│
-├── gui/                       # UI components
-│   ├── main_window.py         # Root QMainWindow
-│   ├── process_selector.py    # Process selection dialog
-│   ├── scan_panel.py          # Scan controls (left panel)
-│   ├── results_table.py       # Found addresses + watchlist
-│   ├── pointer_panel.py       # Pointer scanner dock
-│   ├── memory_viewer.py       # Hex memory viewer
-│   ├── memory_map_dialog.py   # Memory map viewer
-│   ├── graph_dialog.py        # Value graph viewer
-│   ├── aob_dialog.py          # AOB scanner dialog
-│   ├── hotkey_dialog.py       # Hotkey configuration
-│   ├── settings_dialog.py     # Settings panel
-│   └── watchlist_groups.py    # Group management
-│
-├── utils/                     # Utilities
-│   ├── winapi.py              # Pure ctypes WinAPI declarations
-│   ├── converters.py          # bytes ↔ typed values
-│   ├── logger.py              # Structured logging
-│   ├── patterns.py            # Enums, constants
-│   ├── i18n.py                # Internationalization (TR/EN)
-│   ├── settings.py            # Settings manager
-│   └── watchlist_groups.py    # Group data management
-│
-├── resources/                 # Assets
-│   └── lang/                  # Language files
-│       ├── tr.json            # Turkish translations
-│       └── en.json            # English translations
-│
-├── data/                      # User data (gitignored)
-│   └── watchlist_groups.json  # Saved groups
-│
-└── tests/                     # Test suite
-    ├── test_memory_io.py
-    ├── test_scanner.py
-    ├── test_converters.py
-    ├── test_watchlist_groups.py
-    └── test_performance.py
-```
-
----
-
-## Architecture Notes
-
-- **Pure ctypes**: All Windows API calls go through `utils/winapi.py`. No pymem.
-- **Bulk reads**: Scanner reads memory in 4MB chunks using `memoryview` for zero-copy slicing.
-- **QThread**: Scan runs off the main thread. Progress is reported via Qt signals.
-- **Single freeze thread**: One daemon thread writes all frozen addresses at 50ms intervals.
-- **64/32-bit aware**: Detects target bitness via `IsWow64Process`. Pointer reads adjust automatically.
-
----
-
 ## Screenshots
 
 > _Screenshots will be added here showing the main interface and key features._
@@ -177,55 +91,6 @@ EnesMem/
 | `Ctrl + H` | Global Hotkeys |
 | `Enter` | First/Next Scan |
 | `Delete` | Delete Selected Address |
-
----
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Development Setup
-
-```bash
-# Clone the repo
-git clone https://github.com/enes59255/EnesMem.git
-cd EnesMem
-
-# Create virtual environment
-python -m venv venv
-venv\Scripts\activate  # Windows
-
-# Install dev dependencies
-pip install -r requirements.txt
-pip install pytest pytest-cov
-
-# Run tests (requires Administrator)
-python -m pytest tests/ -v
-```
-
----
-
-## Roadmap
-
-- [x] Core memory scanning
-- [x] Pointer scanning
-- [x] AOB scanning
-- [x] Global hotkeys
-- [x] Value graphs
-- [x] CT file support
-- [x] Lua scripting
-- [x] Compare scanning
-- [x] Memory map viewer
-- [ ] Assembly code injection GUI
-- [ ] Disassembler integration
-- [ ] Debugger integration
-- [ ] Plugin system
 
 ---
 
