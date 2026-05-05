@@ -65,6 +65,7 @@ build*.bat
 build*.log
 EnesMem.exe
 EnesMem-v*.zip
+!EnesMem-v1.0.1-fixed.zip
 version.json
 
 # Package dependencies (should be in requirements.txt)
