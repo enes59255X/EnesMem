@@ -30,9 +30,9 @@ def main() -> None:
             _elevate()
         # Continue without elevation — some processes will be inaccessible
 
-    from PyQt6.QtWidgets import QApplication
-    from PyQt6.QtCore import Qt
-    from PyQt6.QtGui import QFont
+    from PyQt5.QtWidgets import QApplication
+    from PyQt5.QtCore import Qt
+    from PyQt5.QtGui import QFont
 
     app = QApplication(sys.argv)
     app.setApplicationName("EnesMem")
@@ -52,7 +52,7 @@ def main() -> None:
 def _ask_elevation() -> bool:
     """Ask user if they want to run as admin (without GUI dependency)."""
     try:
-        from PyQt6.QtWidgets import QApplication, QMessageBox
+        from PyQt5.QtWidgets import QApplication, QMessageBox
         _tmp = QApplication.instance() or QApplication(sys.argv)
         reply = QMessageBox.question(
             None,

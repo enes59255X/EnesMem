@@ -5,14 +5,14 @@ Bottom: Watchlist (user-added addresses with freeze toggle) with bulk ops.
 """
 import json
 import csv
-from PyQt6.QtWidgets import (
+from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QSplitter, QTableWidget, QTableWidgetItem,
     QHeaderView, QAbstractItemView, QMenu, QLabel, QInputDialog,
     QCheckBox, QHBoxLayout, QPushButton, QLineEdit, QFileDialog, QMessageBox,
     QComboBox
 )
-from PyQt6.QtCore import Qt, pyqtSignal, QPoint, QTimer
-from PyQt6.QtGui import QColor, QFont, QShortcut, QKeySequence
+from PyQt5.QtCore import Qt, pyqtSignal, QPoint, QTimer
+from PyQt5.QtGui import QColor, QFont, QShortcut, QKeySequence
 
 from utils.converters import format_address, format_value
 from utils.patterns import DataType
@@ -617,14 +617,14 @@ class ResultsTable(QWidget):
         rows = list(set([item.row() for item in self._found_table.selectedItems()]))
         if rows:
             res = self._filtered_results[rows[0]]
-            from PyQt6.QtWidgets import QApplication
+            from PyQt5.QtWidgets import QApplication
             QApplication.clipboard().setText(format_address(res.address))
 
     def _copy_selected_watch(self) -> None:
         rows = list(set([item.row() for item in self._watch_table.selectedItems()]))
         if rows:
             entry = self._watchlist[rows[0]]
-            from PyQt6.QtWidgets import QApplication
+            from PyQt5.QtWidgets import QApplication
             QApplication.clipboard().setText(format_address(entry.address))
 
     # ── Interactions ──────────────────────────────────────────────────────────

@@ -6,7 +6,7 @@ from dataclasses import dataclass, field
 from enum import Enum
 import json
 import os
-from PyQt6.QtGui import QColor
+from PyQt5.QtGui import QColor
 
 from utils.logger import log
 

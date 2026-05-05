@@ -3,13 +3,13 @@ hotkey_dialog.py — Hotkey configuration dialog.
 """
 from typing import Optional, Callable
 
-from PyQt6.QtWidgets import (
+from PyQt5.QtWidgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QTableWidget, QTableWidgetItem,
     QPushButton, QComboBox, QLineEdit, QLabel, QHeaderView, QMessageBox,
     QCheckBox, QKeySequenceEdit, QGroupBox, QFormLayout
 )
-from PyQt6.QtCore import Qt, pyqtSignal
-from PyQt6.QtGui import QKeySequence
+from PyQt5.QtCore import Qt, pyqtSignal
+from PyQt5.QtGui import QKeySequence
 
 from core.hotkey_manager import hotkey_manager, HotkeyAction, HotkeyConfig
 from utils.i18n import tr

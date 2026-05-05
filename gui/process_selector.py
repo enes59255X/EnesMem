@@ -2,13 +2,13 @@
 process_selector.py — Modal dialog for selecting a target process.
 Features: live search, sortable table, auto-refresh.
 """
-from PyQt6.QtWidgets import (
+from PyQt5.QtWidgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QLineEdit,
     QTableWidget, QTableWidgetItem, QHeaderView,
     QPushButton, QLabel, QAbstractItemView,
 )
-from PyQt6.QtCore import Qt, QTimer
-from PyQt6.QtGui import QFont
+from PyQt5.QtCore import Qt, QTimer
+from PyQt5.QtGui import QFont
 
 from core.process_manager import ProcessManager, ProcessInfo
 from utils.i18n import tr

@@ -6,16 +6,16 @@ freeze/unfreeze, pointer resolution, and UI theming.
 import sys
 from typing import Optional
 
-from PyQt6.QtWidgets import (
+from PyQt5.QtWidgets import (
     QMainWindow, QWidget, QHBoxLayout, QVBoxLayout,
     QLabel, QStatusBar, QPushButton, QToolBar,
     QMessageBox, QInputDialog, QDockWidget, QSplitter,
     QApplication, QFileDialog,
 )
-from PyQt6.QtCore import (
+from PyQt5.QtCore import (
     Qt, QTimer, QThread, pyqtSignal, QObject, pyqtSlot,
 )
-from PyQt6.QtGui import QAction, QIcon, QFont, QKeySequence
+from PyQt5.QtGui import QAction, QIcon, QFont, QKeySequence
 
 from core.process_manager import ProcessManager
 from core.memory_io import MemoryIO
