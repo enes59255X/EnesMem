@@ -172,7 +172,7 @@
     "hotkey_reset": "Varsayılana Sıfırla",
     "hotkey_press_key": "Tuşa basın...",
     "hotkey_select_action": "Eylem seçin",
-    "hotkey_input_desc": "Açıklama (opsiyonel)",
+    "hotkey_input_desc": "Açıklama (isteğe bağlı)",
     "menu_graph": "Değer Grafikleri",
     "graph_title": "Değer Grafikleri",
     "graph_no_data": "Veri yok",
