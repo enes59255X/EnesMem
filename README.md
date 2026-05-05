@@ -45,44 +45,32 @@
 ## Gereksinimler
 
 - Windows 10/11 (64-bit)
-- Python 3.11+
-- Yönetici yetkileri (`ReadProcessMemory` için gerekli)
+- Yönetici yetkileri (EXE'yi çalıştırmak için gerekli)
 
 ---
 
-## Hızlı Başlangıç
+## 🚀 Hızlı Başlangıç
 
-```bash
-# 1. Bağımlılıkları yükle
-pip install -r requirements.txt
+1. GitHub Releases'dan `EnesMem-v1.0.0.zip` indirin
+2. ZIP'i istediğiniz klasöre çıkarın  
+3. `EnesMem.exe` dosyasına çift tıklayın (Yönetici olarak çalıştırın)
+4. Tamamlandı! Kurulum gerekmez.
 
-# 2. Yönetici olarak çalıştır
-python main.py
-```
-
-> **Önemli:** Her zaman Yönetici olarak çalıştırın. Aksi halde sadece mevcut
-> kullanıcı hesabınıza ait işlemleri tarayabilirsiniz.
+> **Önemli:** Her zaman **Yönetici** olarak çalıştırın.
 
 ---
 
-## Testleri Çalıştırma
-
-```bash
-# Yönetici yetkisi gerekir — önce yükseltilmiş terminal açın
-python -m pytest tests/ -v
-```
 
 ---
 
-## Proje Yapısı
+## 📁 Proje Yapısı
 
 ```
 EnesMem/
-├── main.py                    # Giriş noktası (UAC yükseltme)
-├── requirements.txt           # Bağımlılıklar
-├── TUTORIAL.md                # Detaylı kullanım kılavuzu (TR/EN)
-├── walkthrough.md             # Özellik anlatımı
-├── README_EN.md               # İngilizce README
+├── EnesMem.exe              # Çalıştırılabilir uygulama
+├── README.md                # Türkçe dokümantasyon
+├── README_EN.md             # İngilizce dokümantasyon
+├── TUTORIAL.md              # Detaylı kullanım kılavuzu (TR/EN)
 │
 ├── core/                      # Temel motor modülleri
 │   ├── process_manager.py     # İşlem listeleme, handle yaşam döngüsü
@@ -141,7 +129,7 @@ EnesMem/
 
 ---
 
-## Mimari Notları
+## 🛡️ Mimari Notları
 
 - **Saf ctypes**: Tüm Windows API çağrıları `utils/winapi.py` üzerinden. pymem yok.
 - **Toplu okumalar**: Tarayıcı belleği 4MB parçalar halinde okur, `memoryview` ile sıfır-kopya dilimleme yapar.
@@ -180,15 +168,6 @@ EnesMem/
 
 ---
 
-## Katkıda Bulunma
-
-Katkılarınızı bekliyoruz! Lütfen bir Pull Request göndermekten çekinmeyin.
-
-1. Repoyu forklayın
-2. Feature branch oluşturun (`git checkout -b feature/HarikaOzellik`)
-3. Değişikliklerinizi commit edin (`git commit -m 'HarikaOzellik eklendi'`)
-4. Branch'e push edin (`git push origin feature/HarikaOzellik`)
-5. Pull Request açın
 
 ### Geliştirme Kurulumu
 

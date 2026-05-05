@@ -8,13 +8,7 @@
 3. `EnesMem.exe` dosyasına çift tıklayın (Yönetici olarak çalıştırın)
 4. Tamamlandı! Kurulum gerekmez.
 
-**Geliştiriciler:**
-```bash
-git clone https://github.com/enes59255X/EnesMem.git
-cd EnesMem
-pip install -r requirements.txt
-python main.py
-```
+**Not:** Kaynak kodu geliştirme hakları şu an sadece yetkili kişilere açıktır.
 
 ## 📋 Özellikler
 
@@ -90,10 +84,6 @@ EnesMem/
 - **Antivirüs uyarıları** - Yanlış pozitif uyarılar verebilir
 - **Tek dosya** - Kurulum gerekmez, taşınabilir
 
-### Geliştiriciler İçin
-- **Temiz repository** - Sadece kaynak kodu, yapı artefaktı yok
-- **Bağımlılık yok** - Tüm paketler requirements.txt'te
-- **Saf Python** - Derlenmiş ikili dosya yok, sadece kaynak
 
 ## 🎯 Sırada Ne Var?
 
