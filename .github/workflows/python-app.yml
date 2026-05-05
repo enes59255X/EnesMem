@@ -1,0 +1,44 @@
+name: Python Application
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 pytest
+        pip install -r requirements.txt
+    
+    - name: Lint with flake8
+      run: |
+        # Stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # Exit-zero treats all errors as warnings
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    
+    - name: Check syntax
+      run: |
+        python -m py_compile main.py
+        python -m py_compile core/memory_map.py
+        python -m py_compile gui/memory_map_dialog.py
+    
+    - name: Check imports
+      run: |
+        python -c "from core.memory_map import MemoryMap; print('MemoryMap OK')"
+        python -c "from gui.memory_map_dialog import MemoryMapDialog; print('MemoryMapDialog OK')"
+        python -c "from core.aob_scanner import AOBPattern; print('AOBScanner OK')"
