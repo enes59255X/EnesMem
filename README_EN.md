@@ -20,7 +20,7 @@ Python + PyQt6 · pure `ctypes` · Rust accelerator · dark/light workspace
 |---|---:|---|
 | **[EnesMem-1.2.0-win64.exe](https://github.com/enes59255X/EnesMem/releases/download/v1.2.0/EnesMem-1.2.0-win64.exe)** | 48.5 MB | Single file; no installation |
 | **[EnesMem-1.2.0-win64.zip](https://github.com/enes59255X/EnesMem/releases/download/v1.2.0/EnesMem-1.2.0-win64.zip)** | 34.9 MB | Portable folder; faster launch |
-| **[SHA256SUMS.txt](https://github.com/enes59255X/EnesMem/releases/download/v1.2.0/SHA256SUMS.txt)** | 254 B | Download verification |
+| **[SHA256SUMS.txt](https://github.com/enes59255X/EnesMem/releases/download/v1.2.0/SHA256SUMS.txt)** | 180 B | Download verification |
 
 > **Use the ZIP if you want the fastest launch.** The single-file EXE extracts
 > itself on every start. Extract the ZIP and run `EnesMem\EnesMem.exe`; keep the

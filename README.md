@@ -20,7 +20,7 @@ Python + PyQt6 · saf `ctypes` · Rust hızlandırma · koyu/açık arayüz
 |---|---:|---|
 | **[EnesMem-1.2.0-win64.exe](https://github.com/enes59255X/EnesMem/releases/download/v1.2.0/EnesMem-1.2.0-win64.exe)** | 48.5 MB | Tek dosya; kurulum gerekmez |
 | **[EnesMem-1.2.0-win64.zip](https://github.com/enes59255X/EnesMem/releases/download/v1.2.0/EnesMem-1.2.0-win64.zip)** | 34.9 MB | Taşınabilir klasör; daha hızlı açılış |
-| **[SHA256SUMS.txt](https://github.com/enes59255X/EnesMem/releases/download/v1.2.0/SHA256SUMS.txt)** | 254 B | İndirme doğrulama |
+| **[SHA256SUMS.txt](https://github.com/enes59255X/EnesMem/releases/download/v1.2.0/SHA256SUMS.txt)** | 180 B | İndirme doğrulama |
 
 > **Hızlı açılış istiyorsanız ZIP sürümünü kullanın.** Tek dosya EXE her açılışta
 > kendini geçici klasöre çıkarır. Zip'i açıp `EnesMem\EnesMem.exe` dosyasını
