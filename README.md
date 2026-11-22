@@ -35,7 +35,7 @@ Python + PyQt6 · saf `ctypes` · Rust hızlandırma · koyu/açık arayüz
 
 > Build imzasızdır. Windows SmartScreen ilk çalıştırmada uyarı gösterebilir:
 > **More info → Run anyway**. Bellek tarayıcıları antivirüslerde zaman zaman
-> yanlış pozitif üretebilir; kaynak ve release dosyaları bu repodadır.
+> yanlış pozitif üretebilir; release dosyaları bu repodadır.
 
 ## Hızlı başlangıç
 
@@ -105,16 +105,9 @@ Aynı makinede, release Rust çekirdeğiyle ölçülen önce/sonra değerleri:
 
 ## Geliştirme
 
-```powershell
-python -m pip install -r requirements.txt -r requirements-dev.txt
-python main.py
-
-# Tüm kapılar: compile + pytest + cargo test + GUI smoke
-powershell -ExecutionPolicy Bypass -File scripts\verify.ps1
-
-# Klasör + tek dosya + zip
-powershell -ExecutionPolicy Bypass -File scripts\build_exe.ps1
-```
+Bu depo yalnızca derlenmiş sürümleri ve sürüm belgelerini barındırır. Kaynak
+kod ayrı çalışma alanında tutulur; hata/istek için
+[issue](https://github.com/enes59255X/EnesMem/issues) açabilirsiniz.
 
 ## Bilinen sınırlar
 
