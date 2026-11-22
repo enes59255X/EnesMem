@@ -1,99 +1,62 @@
-# EnesMem — Python Memory Scanner / Editor
+# EnesMem v1.1.0 — Python Memory Scanner / Editor
 
-> A production-grade Cheat Engine clone built with Python + PyQt6.
-> Pure `ctypes` — no pymem dependency.
-
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![PyQt6](https://img.shields.io/badge/PyQt6-6.6+-green.svg)](https://www.riverbankcomputing.com/software/pyqt/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](CHANGELOG.md)
-
-🇹🇷 [Türkçe için buraya tıklayın](README.md)
-
----
+> A production-grade Cheat Engine alternative built with Python + PyQt6.
+> Pure `ctypes`; no pymem or external runtime required.
 
 ## Download
 
-[📥 Download EnesMem v1.0.0 (Releases)](https://github.com/enes59255X/EnesMem/releases)
+| File | Size | Description |
+|---|---:|---|
+| **EnesMem.exe** | 48.5 MB | Single file; no installation |
+| **EnesMem-1.1.0-win64.zip** | 34.9 MB | Portable folder; faster launch |
 
----
+The single-file exe is self-contained. If you use the zip, extract it and run
+`EnesMem\EnesMem.exe`; keep the `_internal` folder next to the exe.
 
-## Features
+> **Administrator:** Elevation is not required for same-user targets. Use
+> **Run as administrator** for protected or elevated processes.
 
-- ✅ Process enumeration & attachment
-- ✅ Typed memory read/write (Int8/16/32/64, Float, Double, String, Bytes)
-- ✅ First Scan & Next Scan
-- ✅ Scan modes: Exact, Bigger, Smaller, Increased, Decreased, Changed, Unchanged, Unknown
-- ✅ Value freezing (background thread)
-- ✅ Watchlist with live refresh
-- ✅ Pointer chain resolution
-- ✅ Dark/Light theme support
-- ✅ Global Hotkey System
-- ✅ AOB Advanced Scanning
-- ✅ Value Graph System
-- ✅ CT File Import/Export
-- ✅ Lua Scripting Framework
-- ✅ Memory Map Viewer
+## Highlights
 
----
+- Process enumeration and attachment
+- Int8/16/32/64, UInt, Float, Double, String and Bytes read/write
+- First scan, next scan, AOB/wildcard and unknown-value (UIV) scans
+- Exact, Bigger, Smaller, Between, Increased, Decreased, Changed, Unchanged,
+  Increased/Decreased By and Float tolerance modes
+- Value freezing, live watchlist, pointer-chain resolution
+- Hex and x64 assembly memory viewer
+- "What writes here" hardware breakpoints
+- Speedhack (NtDelayExecution detour)
+- Dark theme, Turkish/English UI, UAC elevation
 
-## Requirements
+## v1.1.0 changes
 
-- Windows 10/11 (64-bit)
-- Administrator privileges
+- Fixed two real speedhack bugs: truncated 64-bit `VirtualAllocEx` address and
+  a hook that split an ntdll instruction. Added a live target test.
+- UIV UNCHANGED peak memory reduced from ~4 GB to **~1.70 GiB**.
+- `scanner.py` reduced from 1707 lines to **760**; first/next scan moved into
+  focused modules.
+- 121 Python tests and 20 Rust tests; live HWBP/speedhack coverage.
+- Native `.pyd` version + SHA-256 integrity check.
+- Single-file and portable-folder builds; both pass the frozen smoke test.
 
----
+## Verification
 
-## Installation & Usage
+- Python: **121/121 passed**
+- Rust: **20/20 passed**
+- GUI smoke: attach → scan → detach → close **OK**
+- Packages: single file and folder **OK**
 
-1. Download `EnesMem.exe` from **Releases**
-2. Run as Administrator (Right click → Run as administrator)
-3. Select process → Scan → Edit values
+SHA-256:
 
-> **Important:** Always run as Administrator. Without it, you can only scan processes owned by your current user account.
+```text
+09b2339c0e44dd69f26d31c09ede888418025e93961f81c32ede552002e63ff7  EnesMem-1.1.0-win64-onefile.exe
+58505c292432e6ffc2b7be1614f146a73060a54aec3e4137dad7aadba0086033  EnesMem-1.1.0-win64.zip
+```
 
----
+## License
 
-## Screenshots
+MIT. See `LICENSE`.
 
-> _Screenshots will be added here showing the main interface and key features._
-
-<!-- 
-![Main Window](screenshots/main_window.png)
-![Memory Viewer](screenshots/memory_viewer.png)
-![Pointer Scanner](screenshots/pointer_scanner.png)
-![Value Graph](screenshots/value_graph.png)
--->
-
----
-
-## Keyboard Shortcuts
-
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl + O` | Attach to Process |
-| `Ctrl + Q` | Exit |
-| `Ctrl + P` | Pointer Scanner |
-| `Ctrl + B` | AOB Scanner |
-| `Ctrl + G` | Value Graphs |
-| `Ctrl + M` | Memory Map |
-| `Ctrl + H` | Global Hotkeys |
-| `Enter` | First/Next Scan |
-| `Delete` | Delete Selected Address |
-
----
-
-## Acknowledgments
-
-- Inspired by [Cheat Engine](https://cheatengine.org/) by Dark Byte
-- Built with [PyQt6](https://www.riverbankcomputing.com/software/pyqt/)
-- Uses [pynput](https://github.com/moses-palmer/pynput) for global hotkeys
-
----
-
-## Legal Notice
-
-This tool is for educational purposes and authorized use only.
-Do not use on software you do not own or have permission to analyze.
-
-**Use at your own risk.** The authors are not responsible for any damage or legal issues caused by the use of this software.
+This tool is for educational and authorized testing only. Do not use it on
+software you do not own or have permission to analyze.

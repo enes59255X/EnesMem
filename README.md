@@ -1,103 +1,62 @@
-# EnesMem — Python Bellek Tarayıcı / Düzenleyici
+# EnesMem v1.1.0 — Python Bellek Tarayıcısı / Düzenleyici
 
-> Python + PyQt6 ile yazılmış, üretim düzeyinde bir Cheat Engine klonu.
-> Saf `ctypes` — pymem bağımlılığı yok.
-
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![PyQt6](https://img.shields.io/badge/PyQt6-6.6+-green.svg)](https://www.riverbankcomputing.com/software/pyqt/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](CHANGELOG.md)
-
-🇬🇧 [İngilizce için tıklayın](README_EN.md)
-
----
+> Python + PyQt6 ile yazılmış, üretim düzeyinde bir Cheat Engine alternatifi.
+> Saf `ctypes`; pymem veya harici runtime gerekmez.
 
 ## İndir
 
-[📥 EnesMem v1.0.0 İndir (Releases)](https://github.com/enes59255X/EnesMem/releases)
+| Dosya | Boyut | Açıklama |
+|---|---:|---|
+| **EnesMem.exe** | 48.5 MB | Tek dosya; kurulum gerektirmez |
+| **EnesMem-1.1.0-win64.zip** | 34.9 MB | Taşınabilir klasör; daha hızlı açılış |
 
----
+`EnesMem.exe` tek başına çalışır. Zip sürümünü indirirseniz klasörü çıkartıp
+`EnesMem\EnesMem.exe` dosyasını çalıştırın; `_internal` klasörünü exe'den ayırmayın.
 
-## Özellikler
+> **Yönetici:** Normal kullanıcı süreçleri için yönetici gerekmez. Korumalı veya
+> yönetici olarak çalışan hedefler için **Yönetici olarak çalıştır** kullanın.
 
-- ✅ İşlem listeleme ve bağlanma
-- ✅ Çoklu tür bellek okuma/yazma (Int8/16/32/64, Float, Double, String, Bytes)
-- ✅ İlk Tarama ve Sonraki Tarama
-- ✅ Tarama modları: Exact, Bigger, Smaller, Increased, Decreased, Changed, Unchanged, Unknown
-- ✅ Değer dondurma (arka plan thread'i)
-- ✅ Canlı yenilemeli izleme listesi
-- ✅ Pointer zinciri çözümleme
-- ✅ Koyu/açık tema desteği
-- ✅ Global Kısayol Sistemi
-- ✅ AOB Gelişmiş Tarama
-- ✅ Değer Grafik Sistemi
-- ✅ CT Dosya İçe/Dışa Aktarma
-- ✅ Lua Betik Çerçevesi
-- ✅ Bellek Haritası Görüntüleyici
+## Öne çıkanlar
 
----
+- Süreç listeleme ve bağlanma
+- Int8/16/32/64, UInt, Float, Double, String ve Bytes okuma/yazma
+- First scan, next scan, AOB/wildcard, unknown-value (UIV) taramaları
+- Exact, Bigger, Smaller, Between, Increased, Decreased, Changed, Unchanged,
+  Increased/Decreased By ve Float tolerance modları
+- Değer dondurma, canlı watchlist, pointer zinciri çözümleme
+- Hex ve x64 assembly bellek görüntüleyici
+- "What writes here" donanım breakpoint'leri
+- Speedhack (NtDelayExecution detour)
+- Koyu tema, Türkçe/İngilizce arayüz, UAC yükseltme
 
-## Gereksinimler
+## v1.1.0 yenilikleri
 
-- Windows 10/11 (64-bit)
-- Yönetici yetkileri
+- Speedhack'te iki gerçek hata düzeltildi: 64-bit `VirtualAllocEx` adresinin
+  kesilmesi ve hook'un ntdll talimatını ortadan bölmesi. Canlı hedef testi eklendi.
+- UIV UNCHANGED bellek kullanımı ~4 GB'dan **~1.70 GiB** seviyesine indirildi.
+- `scanner.py` 1707 satırdan **760 satıra** indirildi; first/next scan ayrı
+  modüllere taşındı.
+- 121 Python testi ve 20 Rust testi; canlı HWBP/speedhack testleri.
+- Native `.pyd` için sürüm + SHA-256 bütünlük kontrolü.
+- Tek dosya ve taşınabilir klasör çıktısı; ikisi de smoke testinden geçti.
 
----
+## Doğrulama
 
-## Kurulum ve Kullanım
+- Python: **121/121 passed**
+- Rust: **20/20 passed**
+- GUI smoke: attach → scan → detach → close **OK**
+- Paket: tek dosya ve klasör sürümü **OK**
 
-1. **Releases** bölümünden `EnesMem.exe` dosyasını indir
-2. Yönetici olarak çalıştır (sağ tık → Yönetici olarak çalıştır)
-3. İşlem seç → Tarama yap → Değerleri değiştir
+SHA-256:
 
-> **Önemli:** Her zaman Yönetici olarak çalıştırın. Aksi halde sadece mevcut kullanıcı hesabınıza ait işlemleri tarayabilirsiniz.
+```text
+09b2339c0e44dd69f26d31c09ede888418025e93961f81c32ede552002e63ff7  EnesMem-1.1.0-win64-onefile.exe
+58505c292432e6ffc2b7be1614f146a73060a54aec3e4137dad7aadba0086033  EnesMem-1.1.0-win64.zip
+```
 
----
+## Lisans
 
-## Hakkında
+MIT. Ayrıntılar için `LICENSE` dosyasına bakın.
 
-**EnesMem v1.0.0** - Python ile geliştirilmiş, üretim düzeyinde bir bellek tarayıcısı ve düzenleyicisi.
-
-### 🌟 Özellikler
-- **Çok Dilli Destek**: Türkçe ve İngilizce arayüz
-- **Modern Arayüz**: Koyu/açık tema desteği
-- **Global Kısayollar**: Klavye kısayolları ile hızlı erişim
-- **Gerçek Zamanlı**: Bellek değerlerini anlık olarak izleme
-
-### 📊 Bilgiler
-- **Versiyon**: v1.0.0
-- **Yayın Tarihi**: 2026
-- **Lisans**: MIT
-- **Platform**: Windows 10/11 (64-bit)
-
-### � Destek
-GitHub: https://github.com/enes59255X/EnesMem
-
----
-
-## Ekran Görüntüleri
-
-> _Ana arayüz ve temel özelliklerin ekran görüntüleri buraya eklenecek._
-
-<!-- 
-![Ana Pencere](screenshots/main_window.png)
-![Bellek Görüntüleyici](screenshots/memory_viewer.png)
-![Pointer Tarayıcı](screenshots/pointer_scanner.png)
-![Değer Grafiği](screenshots/value_graph.png)
--->
-
----
-
-## Klavye Kısayolları
-
-| Kısayol | Aksiyon |
-|---------|---------|
-| `Ctrl + O` | İşleme Bağlan |
-| `Ctrl + Q` | Çıkış |
-| `Ctrl + P` | Pointer Tarayıcı |
-| `Ctrl + B` | AOB Tarayıcı |
-| `Ctrl + G` | Değer Grafikleri |
-| `Ctrl + M` | Bellek Haritası |
-| `Ctrl + H` | Global Kısayollar |
-| `Enter` | İlk/Sonraki Tarama |
-| `Delete` | Seçili Adresi Sil |
+Bu araç yalnızca eğitim ve yetkili test amacıyla kullanılmalıdır. Sahibi
+olmadığınız veya analiz izniniz olmayan yazılımlarda kullanmayın.
