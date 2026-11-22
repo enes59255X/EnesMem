@@ -1,3 +1,2 @@
-9edaf783bbbff12bb490f8ec74ea835ce18cd35572e4dc6d100f46f21beab562  EnesMem.exe
+9edaf783bbbff12bb490f8ec74ea835ce18cd35572e4dc6d100f46f21beab562  EnesMem-1.2.0-win64.exe
 32aafc8acd74f84f9f4a692e35939a017f8afecb1517ac69d9fea367c8f437e7  EnesMem-1.2.0-win64.zip
-6f4d897d9a9936737b2fd05b104a912b44710e5d9f579583d0ecf025d9446001  EnesMem\EnesMem.exe
