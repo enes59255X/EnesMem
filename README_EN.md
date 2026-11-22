@@ -1,4 +1,4 @@
-# EnesMem v1.1.0 — Python Memory Scanner / Editor
+# EnesMem v1.2.0 - Python Memory Scanner / Editor
 
 > A production-grade Cheat Engine alternative built with Python + PyQt6.
 > Pure `ctypes`; no pymem or external runtime required.
@@ -8,7 +8,7 @@
 | File | Size | Description |
 |---|---:|---|
 | **EnesMem.exe** | 48.5 MB | Single file; no installation |
-| **EnesMem-1.1.0-win64.zip** | 34.9 MB | Portable folder; faster launch |
+| **EnesMem-1.2.0-win64.zip** | 34.9 MB | Portable folder; faster launch |
 
 The single-file exe is self-contained. If you use the zip, extract it and run
 `EnesMem\EnesMem.exe`; keep the `_internal` folder next to the exe.
@@ -27,36 +27,28 @@ The single-file exe is self-contained. If you use the zip, extract it and run
 - Hex and x64 assembly memory viewer
 - "What writes here" hardware breakpoints
 - Speedhack (NtDelayExecution detour)
-- Dark theme, Turkish/English UI, UAC elevation
+- Modern dark/light workspace, Turkish/English UI, UAC elevation
 
-## v1.1.0 changes
+## v1.2.0 interface refresh
 
-- Fixed two real speedhack bugs: truncated 64-bit `VirtualAllocEx` address and
-  a hook that split an ntdll instruction. Added a live target test.
-- UIV UNCHANGED peak memory reduced from ~4 GB to **~1.70 GiB**.
-- `scanner.py` reduced from 1707 lines to **760**; first/next scan moved into
-  focused modules.
-- 121 Python tests and 20 Rust tests; live HWBP/speedhack coverage.
-- Native `.pyd` version + SHA-256 integrity check.
-- Single-file and portable-folder builds; both pass the frozen smoke test.
+- Resizable three-pane workbench: scan rail, results workspace, pointer inspector.
+- Command bar carries process state, attach/detach, refresh rate, theme and help.
+- Results search, paging, counts, empty state and watchlist actions no longer
+  overlap or clip.
+- Removed the duplicated pointer-panel title and fixed clipped labels.
+- Shared design tokens for dark and light themes; monospace only for addresses.
+- Replaced broken emoji glyphs with readable labels and standard Qt icons.
+
+## Quick start
+
+1. Run `EnesMem\EnesMem.exe`.
+2. Select a target with **Attach**.
+3. Choose a type and value, then run **First Scan** (F5).
+4. Change the value in the game; narrow with **Next Scan** (F6).
+5. Double-click a result to add it to the watchlist.
 
 ## Verification
 
-- Python: **121/121 passed**
-- Rust: **20/20 passed**
-- GUI smoke: attach → scan → detach → close **OK**
-- Packages: single file and folder **OK**
-
-SHA-256:
-
-```text
-09b2339c0e44dd69f26d31c09ede888418025e93961f81c32ede552002e63ff7  EnesMem-1.1.0-win64-onefile.exe
-58505c292432e6ffc2b7be1614f146a73060a54aec3e4137dad7aadba0086033  EnesMem-1.1.0-win64.zip
-```
-
-## License
-
-MIT. See `LICENSE`.
-
-This tool is for educational and authorized testing only. Do not use it on
-software you do not own or have permission to analyze.
+- 121 Python tests, 20 Rust tests
+- GUI smoke: attach, scan, detach, close
+- Frozen onedir and onefile `--smoke-test` pass
