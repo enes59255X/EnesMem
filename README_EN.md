@@ -35,7 +35,7 @@ Python + PyQt6 · pure `ctypes` · Rust accelerator · dark/light workspace
 
 > The build is unsigned. Windows SmartScreen may show a warning on first launch:
 > **More info → Run anyway**. Memory scanners can occasionally trigger antivirus
-> false positives; the source and release files live in this repository.
+> false positives; the release assets live in this repository.
 
 ## Quick start
 
@@ -105,16 +105,9 @@ Measured on the same machine with the release Rust core:
 
 ## Development
 
-```powershell
-python -m pip install -r requirements.txt -r requirements-dev.txt
-python main.py
-
-# Full local gate: compile + pytest + cargo test + GUI smoke
-powershell -ExecutionPolicy Bypass -File scripts\verify.ps1
-
-# Folder + single file + zip
-powershell -ExecutionPolicy Bypass -File scripts\build_exe.ps1
-```
+This repository hosts packaged releases and release documentation. The source
+tree is kept in a separate workspace; use the [issue tracker](https://github.com/enes59255X/EnesMem/issues)
+for bugs and requests.
 
 ## Known limits
 
