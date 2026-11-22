@@ -1,5 +1,7 @@
 # EnesMem v1.2.0 - Python Memory Scanner / Editor
 
+![EnesMem workspace](UI.png)
+
 > A production-grade Cheat Engine alternative built with Python + PyQt6.
 > Pure `ctypes`; no pymem or external runtime required.
 

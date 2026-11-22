@@ -1,5 +1,7 @@
 # EnesMem v1.2.0 - Python Bellek Tarayıcısı / Düzenleyici
 
+![EnesMem workspace](UI.png)
+
 > Python + PyQt6 ile yazılmış, üretim düzeyinde bir Cheat Engine alternatifi.
 > Saf `ctypes`; pymem veya harici runtime gerekmez.
 
